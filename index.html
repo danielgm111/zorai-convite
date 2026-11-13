@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZORAI · Convite para terapeutas da fala</title>
+<meta name="description" content="Convite para terapeutas da fala: 20 a 30 minutos para conhecer o protótipo da ZORAI, com dados fictícios e sem compromisso.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:url" content="https://convite.zorai.pt/">
+<meta property="og:title" content="ZORAI · Queremos mostrar-te o que fizemos com as tuas respostas">
+<meta property="og:description" content="Convite para terapeutas da fala: 20 a 30 minutos, presencial ou por videochamada, sem compromisso.">
+<meta property="og:image" content="https://convite.zorai.pt/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#072D59">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#072D59; --sky:#DBF2FC; --mid:#2367A8; --pink:#FD6E88; --pink-strong:#D93D63;
+    --ink:#0E2240; --muted:#4A5E78; --line:#E3EBF3; --bg:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px}
+  .wrap{max-width:560px;margin:0 auto;padding:0 22px}
+
+  /* Topo */
+  header{position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(160deg,#051F3F 0%,var(--navy) 55%,#0B3B72 100%);
+    padding:28px 0 56px}
+  .orb{position:absolute;border-radius:50%;filter:blur(38px);pointer-events:none}
+  .orb.a{width:260px;height:260px;right:-70px;top:-40px;background:radial-gradient(circle,rgba(219,242,252,.55),rgba(219,242,252,0) 70%)}
+  .orb.b{width:220px;height:220px;right:30px;top:90px;background:radial-gradient(circle,rgba(253,110,136,.45),rgba(253,110,136,0) 70%)}
+  header .wrap{position:relative}
+  .logo{display:block;height:auto}
+  .logo-foot{display:block;margin:0 auto 10px;height:auto}
+  .eyebrow{display:inline-block;margin-top:40px;font-size:13px;font-weight:600;letter-spacing:.04em;
+    background:rgba(219,242,252,.14);border:1px solid rgba(219,242,252,.28);padding:5px 11px;border-radius:999px}
+  h1{font-size:31px;line-height:1.18;font-weight:800;margin:16px 0 14px;letter-spacing:-.01em}
+  header p{color:#D3E3F3;font-size:17px;max-width:30em}
+
+  section{padding:40px 0 8px}
+  h2{font-size:22px;line-height:1.25;font-weight:700;color:var(--navy);margin-bottom:12px}
+  p+p{margin-top:10px}
+  .muted{color:var(--muted)}
+
+  /* Números */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 14px}
+  .stat{background:var(--sky);border-radius:16px;padding:16px 14px}
+  .stat b{display:block;font-size:28px;font-weight:800;color:var(--navy);line-height:1.1}
+  .stat > span{display:block;font-size:14.5px;color:var(--ink);margin-top:6px;line-height:1.4}
+  .note{font-size:13px;color:var(--muted)}
+
+  /* O que vais ver */
+  .feature{margin-top:26px}
+  .feature .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
+    background:var(--navy);color:#fff;font-size:13px;font-weight:700;margin-right:8px;vertical-align:2px}
+  .feature h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .shot{margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 8px 24px rgba(7,45,89,.10);background:#F6FAFD}
+  .shot img{display:block;width:100%;height:auto}
+  .shot.placeholder{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+    color:var(--mid);font-size:14px;font-weight:500;border:1.5px dashed #B9D3EA;box-shadow:none;text-align:center;padding:16px}
+  code.tag{font-family:inherit;font-size:.92em;background:#FFF4D6;color:#6B4E00;padding:1px 6px;border-radius:6px;white-space:nowrap}
+  .seal{display:inline-block;font-size:.9em;font-weight:600;color:var(--mid);background:var(--sky);padding:1px 8px;border-radius:999px;white-space:nowrap}
+
+
+  .all-in-one{margin:14px 2px 0;font-size:15px;color:var(--muted);text-align:center}
+  .all-in-one b{color:var(--navy);font-weight:600}
+
+  .caption{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+  /* Relatório a escrever-se */
+  .doc{margin-top:12px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 16px 14px;
+    box-shadow:0 8px 24px rgba(7,45,89,.10);font-size:12.5px;line-height:1.45}
+  .doc small{display:block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .doc-head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:10px;border-bottom:2px solid var(--mid)}
+  .doc-brand{color:var(--mid);font-size:16px;letter-spacing:.04em}
+  .doc-type{text-align:right;font-size:11px}
+  .doc-type small{text-transform:none;letter-spacing:0;font-weight:500}
+  .doc-title{font-weight:700;color:var(--ink);font-size:14px;margin:12px 0 8px}
+  .doc-meta{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;background:#F6FAFD;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;font-weight:600}
+  .doc-status{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-size:12px;color:var(--mid);font-weight:600;transition:opacity .4s}
+  .doc-status.done{opacity:0;height:0;margin:0;overflow:hidden}
+  .spin{width:12px;height:12px;border-radius:50%;border:2px solid #CFE3F3;border-top-color:var(--mid);animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .doc-body .t{margin-top:8px;color:#1F2D3D}
+  .doc-body .t.h{font-weight:600;color:var(--navy);font-size:12px;letter-spacing:.03em;margin-top:12px}
+  .doc-body .t.note-ai{color:var(--muted);font-size:12.5px}
+  .doc-body .t.fill{background:#FFF4D6;color:#6B4E00;border-radius:8px;padding:6px 8px;margin-top:12px;transition:box-shadow .5s}
+  .doc-body .t.fill.flash{box-shadow:0 0 0 3px rgba(240,190,60,.45)}
+  .caret{display:inline-block;width:2px;height:1em;background:var(--mid);vertical-align:-2px;margin-left:1px;animation:blink .8s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* Pedido */
+  .ask{list-style:none;margin-top:14px;display:grid;gap:10px}
+  .ask li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:14px}
+  .ask svg{flex:none;margin-top:2px}
+  .ask b{color:var(--navy)}
+
+  /* Como marcar */
+  .cta{margin:28px 0 8px;border-radius:20px;padding:24px 20px;color:#fff;
+    background:linear-gradient(135deg,var(--pink) 0%,var(--pink-strong) 100%);box-shadow:0 10px 28px rgba(217,61,99,.28)}
+  .cta h2{color:#fff;margin-bottom:8px}
+  .cta p{color:#FFF0F3}
+
+  footer{padding:30px 0 40px;font-size:13px;color:var(--muted);text-align:center}
+
+
+  /* Painel em moldura */
+  header{padding-bottom:120px}
+  .hero-shot{margin-top:-96px;position:relative;z-index:2}
+  .browser{margin:0;border-radius:14px;overflow:hidden;background:#fff;
+    box-shadow:0 22px 50px rgba(7,45,89,.28),0 2px 6px rgba(7,45,89,.12)}
+  .browser .bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#EEF4FA;border-bottom:1px solid var(--line)}
+  .browser .bar i{width:8px;height:8px;border-radius:50%;background:#C9D7E6}
+  .browser .bar span{margin-left:8px;font-size:11.5px;color:var(--muted);font-weight:500}
+  .browser img{display:block;width:100%;height:auto}
+
+  /* Animação */
+  .orb.a{animation:driftA 14s ease-in-out infinite alternate}
+  .orb.b{animation:driftB 17s ease-in-out infinite alternate}
+  @keyframes driftA{to{transform:translate(-40px,30px) scale(1.12)}}
+  @keyframes driftB{to{transform:translate(30px,-25px) scale(.9)}}
+  header .wrap > *{opacity:0;transform:translateY(14px);animation:rise .7s ease-out forwards}
+  header .wrap > :nth-child(2){animation-delay:.12s}
+  header .wrap > :nth-child(3){animation-delay:.24s}
+  header .wrap > :nth-child(4){animation-delay:.36s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .ask.reveal li{opacity:0;transform:translateX(-10px);transition:opacity .5s ease,transform .5s ease}
+  .js .ask.reveal.in li{opacity:1;transform:none}
+  .js .ask.reveal.in li:nth-child(2){transition-delay:.1s}
+  .js .ask.reveal.in li:nth-child(3){transition-delay:.2s}
+  .js .ask.reveal.in li:nth-child(4){transition-delay:.3s}
+  .seal{animation:glow 2.8s ease-in-out infinite}
+  @keyframes glow{50%{box-shadow:0 0 0 4px rgba(35,103,168,.14)}}
+  .shot{transition:transform .3s ease}
+  .cta{background-size:200% 200%;animation:sheen 8s ease-in-out infinite}
+  @keyframes sheen{50%{background-position:100% 50%}}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    header .wrap > *,.js .reveal,.js .ask.reveal li{opacity:1!important;transform:none!important}
+  }
+  @media (min-width:600px){ h1{font-size:38px} body{font-size:18px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <img class="logo" src="logo-branco.png" alt="ZORAI" width="120">
+    <span class="eyebrow">Convite · Terapia da Fala</span>
+    <h1>Queremos mostrar-te o que fizemos com as tuas respostas.</h1>
+    <p>A ZORAI é uma plataforma para terapeutas da fala que junta o trabalho clínico e o administrativo, com um assistente de IA que ajuda, mas nunca substitui a terapeuta. As decisões são sempre tuas.</p>
+  </div>
+</header>
+
+<div class="wrap hero-shot">
+  <figure class="browser reveal">
+    <div class="bar"><i></i><i></i><i></i><span>O teu painel na ZORAI</span></div>
+    <img src="img/painel.jpg" alt="Painel inicial da ZORAI com próximas consultas, utentes ativos e atalhos" width="1200" height="536">
+  </figure>
+  <p class="all-in-one reveal">E tudo o resto num só lugar: <b>utentes, processos clínicos, agenda e documentos.</b></p>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <h2>Porque te escrevemos</h2>
+    <p>Respondeste ao nosso questionário. Duas respostas destacaram-se entre todas:</p>
+    <div class="reveal stats">
+      <div class="stat"><b><span class="count" data-to="90">90</span>%</b><span>indicaram os relatórios entre as tarefas que mais tempo lhes tiram.</span></div>
+      <div class="stat"><b><span class="count" data-to="80">80</span>%</b><span>apontaram a confidencialidade dos dados como preocupação com a IA.</span></div>
+    </div>
+    <p>Construímos um primeiro protótipo a pensar nisso. Agora precisamos da tua opinião.</p>
+  </section>
+
+  <section>
+    <h2>O que vais ver</h2>
+        <div class="feature reveal" id="f-relatorio">
+          <h3><span class="num">1</span>Relatório com rascunho da IA</h3>
+          <p class="muted">A partir dos registos do processo, a IA prepara um rascunho. Não inventa: o que falta fica assinalado. Tu revês, corriges e decides.</p>
+          <div class="doc" id="doc">
+            <div class="doc-head">
+              <div><b class="doc-brand">ZORAI</b><small>Documentação clínica</small></div>
+              <div class="doc-type"><b>Relatório Clínico</b><small>Data: 13/11/2026</small></div>
+            </div>
+            <div class="doc-title">Relatório de acompanhamento — Tomás Ferreira</div>
+            <div class="doc-meta"><span><small>Utente</small>Tomás Ferreira</span><span><small>Processo clínico</small>Perturbação dos sons da fala</span></div>
+            <div class="doc-status" id="docStatus"><i class="spin"></i><span>A redigir a partir de 4 sessões registadas…</span></div>
+            <div class="doc-body" id="docBody">
+              <p class="t note-ai">[Rascunho redigido com IA a partir dos registos — rever e validar antes de utilizar]</p>
+              <p class="t h">MOTIVO DO ACOMPANHAMENTO</p>
+              <p class="t">O utente, de 5 anos e 7 meses de idade, iniciou o acompanhamento em Terapia da Fala na sequência de queixas apresentadas pelos pais e pela educadora relativamente a uma fala pouco inteligível para pessoas não familiares.</p>
+              <p class="t h">RECOMENDAÇÕES</p>
+              <p class="t">- Manutenção da intervenção semanal em Terapia da Fala;<br>- Reavaliação formal aos 3 meses após a avaliação inicial.</p>
+              <p class="t fill">[A completar pelo terapeuta: data de emissão do relatório, local e assinatura/número de cédula profissional]</p>
+            </div>
+          </div>
+          <p class="caption">Excertos de um relatório real de demonstração, com dados fictícios.</p>
+        </div>
+
+        <div class="feature reveal" id="f-copiloto">
+          <h3><span class="num">2</span>Copiloto que protege o utente</h3>
+          <p class="muted">Podes pensar um caso em conjunto com a IA sem expor o utente: o nome e os contactos não são enviados. O selo <span class="seal">Dados do utente sem identificação</span> está sempre à vista.</p>
+          <div class="shot"><img src="img/copiloto.jpg" alt="Ecrã do Copiloto da ZORAI com o selo Dados do utente sem identificação" loading="lazy"></div>
+        </div>
+
+        <div class="feature reveal" id="f-biblioteca">
+          <h3><span class="num">3</span>Biblioteca científica em português</h3>
+          <p class="muted">Artigos de referência reunidos num só lugar, com a fonte sempre indicada e um botão para traduzir o resumo para português.</p>
+          <div class="shot"><img src="img/biblioteca.jpg" alt="Ecrã da biblioteca científica da ZORAI com o botão Traduzir para português" loading="lazy"></div>
+        </div>
+
+  </section>
+
+  <section>
+    <h2>O que te pedimos</h2>
+    <ul class="reveal ask">
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2367A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><b>20 a 30 minutos</b> do teu tempo.</span>
+      </li>
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2367A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>
+        <span><b>Presencial ou por videochamada</b>, como te der mais jeito.</span>
+      </li>
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2367A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        <span><b>Sem compromisso.</b> Queremos sobretudo ouvir o que achas.</span>
+      </li>
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2367A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span><b>Só com dados fictícios.</b> Não precisas de trazer nada sobre os teus utentes.</span>
+      </li>
+    </ul>
+
+    <div class="reveal cta">
+      <h2>Como marcar</h2>
+      <p>Basta responderes à mensagem de WhatsApp em que recebeste esta página, com o dia e a hora que te dão mais jeito.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="logo-foot" src="logo-navy.png" alt="ZORAI" width="96">
+    Protótipo em desenvolvimento. Obrigado pelo teu tempo.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var to=+el.dataset.to; if(reduce){el.textContent=to;return}
+    var t0=null; function step(t){ if(!t0)t0=t; var k=Math.min((t-t0)/1100,1); el.textContent=Math.round(to*(1-Math.pow(1-k,3))); if(k<1)requestAnimationFrame(step);} el.textContent='0'; requestAnimationFrame(step);
+  }
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; e.target.classList.add('in');
+    e.target.querySelectorAll('.count').forEach(count); io.unobserve(e.target);
+  })},{threshold:.18});
+  els.forEach(function(e){io.observe(e)});
+  /* Segurança: nada fica escondido se a pessoa fizer scroll muito rápido */
+  function sweep(){ els.forEach(function(e){ if(!e.classList.contains('in') && e.getBoundingClientRect().top < innerHeight){ e.classList.add('in'); e.querySelectorAll('.count').forEach(count); io.unobserve(e);} }); }
+  addEventListener('scroll',function(){ clearTimeout(window.__sw); window.__sw=setTimeout(sweep,120); },{passive:true});
+  setTimeout(sweep,2500);
+})();
+</script>
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Relatório a escrever-se --- */
+  var body=document.getElementById('docBody'), status=document.getElementById('docStatus');
+  var parts=[].slice.call(body.querySelectorAll('.t')), texts=parts.map(function(p){return p.innerHTML});
+  body.style.minHeight=body.offsetHeight+'px';
+  var typing=false, typed=false;
+  function typeAll(done){
+    if(typing) return; typing=true;
+    parts.forEach(function(p){p.innerHTML='';p.style.display='none'});
+    status.classList.remove('done');
+    var caret=document.createElement('span'); caret.className='caret';
+    if(reduce){ parts.forEach(function(p,i){p.style.display='';p.innerHTML=texts[i]}); status.classList.add('done'); typing=false; typed=true; done&&done(); return; }
+    setTimeout(function(){
+      status.classList.add('done');
+      var i=0;
+      (function next(){
+        if(i>=parts.length){ caret.remove(); parts[parts.length-1].classList.add('flash'); typing=false; typed=true; done&&done(); return; }
+        var p=parts[i], html=texts[i], tokens=html.split(/(<br>)/), out='', ti=0, ci=0;
+        p.style.display='';
+        var speed=p.classList.contains('h')?28:(p.classList.contains('fill')?22:9);
+        (function tick(){
+          if(ti>=tokens.length){ i++; setTimeout(next, p.classList.contains('h')?60:160); return; }
+          var tok=tokens[ti];
+          if(tok==='<br>'){ out+='<br>'; ti++; }
+          else { var step=speed<12?3:1; out+=tok.slice(ci,ci+step); ci+=step; if(ci>=tok.length){ti++;ci=0;} }
+          p.innerHTML=out; p.appendChild(caret);
+          setTimeout(tick, speed);
+        })();
+      })();
+    }, 1300);
+  }
+
+  /* Começa quando o relatório aparece no ecrã; corre uma vez */
+  var docEl=document.getElementById('doc');
+  if('IntersectionObserver' in window){
+    var o=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ o.disconnect(); typeAll(); } }) },{threshold:.4});
+    o.observe(docEl);
+  } else { typeAll(); }
+})();
+</script>
+</body>
+</html>
